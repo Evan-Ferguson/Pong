@@ -4,6 +4,7 @@ paddle Pl2;
 int Width = 600;
 int Height = 300;
 
+
 void setup (){
   size(600,300);
   background(0);
@@ -26,33 +27,33 @@ void draw (){
 }
 void keyPressed(){
   if(key == 'w'){
-    Pl1.MovepaddleUp();
+    Pl1.up = true;
+    Pl1.down = false;
   }else if(key == 's'){
-    Pl1.MovepaddleDown();
-  }else{
-    Pl1.paddleStay();
+    Pl1.up = false;
+    Pl1.down = true;
   }
-      if(keyCode == UP){
-    Pl2.MovepaddleUp();
+  if(keyCode == UP){
+  Pl2.up = true;
+  Pl2.down = false;
   }else if(keyCode == DOWN){
-    Pl2.MovepaddleDown();
-  }else{
-    Pl2.paddleStay();
+  Pl2.up = false;
+  Pl2.down = true;
   }
 }
 void keyReleased(){
-    if(key == 'w'){
-    Pl1.paddleStay();
+  if(key == 'w'){
+    Pl1.up = false;
+    Pl1.down = false;
   }else if(key == 's'){
-    Pl1.paddleStay();
-  }else{
-    Pl1.paddleStay();
+    Pl1.up = false;
+    Pl1.down = false;
   }
-      if(keyCode == UP){
-    Pl2.paddleStay();
+  if(keyCode == UP){
+  Pl2.up = false;
+  Pl2.down = false;
   }else if(keyCode == DOWN){
-    Pl2.paddleStay();
-  }else{
-    Pl2.paddleStay();
+  Pl2.up = false;
+  Pl2.down = false;
   }
 }
