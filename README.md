@@ -21,8 +21,8 @@ Other:
 	Single/two player
 		Single player AI:
 	Power ups:Buffs to player or debuff to opponents:Trigger by hitting ball into certain areas.
-	To apply buffs/debuffs to right player could change ball object to player specific balls on paddle 
-	hit transfering Y and X V??Would need two ball objects.
+	To apply buffs/debuffs to right player check Xvel if neg or pos will determine direction of ball travel 
+	thus indicating whitch player last bounced the ball.
 		Magnet:Catch and release ball
 		Slow ball:Ball V halved when incoming
 		Big/Small paddle:Paddle size changes
