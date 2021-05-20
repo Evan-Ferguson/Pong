@@ -3,9 +3,17 @@ public class ball{
   private int Ycord;
   private int Xvel;//Posative Right|Negative Left
   private int Yvel;//Posative Down |Negative Up
+ // private boolean collision = false;
   
   public void Drawball(){
-    if(Ycord<=0){
+    if((Xcord+Width/30) >= Pl2.ReturnXcord() && (Ycord+Height/15) >= Pl2.ReturnYcord() && Ycord <= (Pl2.ReturnYcord() + (Height/5))){
+      ReverseXvel();
+    }
+    if((Xcord-Width/30) <= Pl1.ReturnXcord() && (Ycord+Height/15) >= Pl1.ReturnYcord() && Ycord <= (Pl1.ReturnYcord() + (Height/5))){
+      ReverseXvel();
+    }
+
+    if(Ycord<=0){//Checks top/bottom collision
       Ycord = 0;
       ReverseYvel();
     }
@@ -37,4 +45,5 @@ public class ball{
   public void SetYVel(int Y){
     Yvel = Y;
   }
+  
 }

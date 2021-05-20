@@ -38,4 +38,10 @@ public class paddle{
   public void paddleStay(){
     Yvel = 0;
   }
+  public int ReturnXcord(){
+    return Xcord;
+  }
+  public int ReturnYcord(){
+    return Ycord;
+  }
 }

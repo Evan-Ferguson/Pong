@@ -25,6 +25,8 @@ void draw (){
   Pl2.Drawpaddle();
   Myball.Drawball();
 }
+
+
 void keyPressed(){
   if(key == 'w'){
     Pl1.up = true;
