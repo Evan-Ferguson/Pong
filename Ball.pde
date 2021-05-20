@@ -6,15 +6,15 @@ public class ball{
  // private boolean collision = false;
   
   public void Drawball(){
-    if((Xcord+Width/30) == Width){//Pl1 score serv to Pl2
-      Pl1Score++;
+    if((Xcord+Width/30) == Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
+      Thetable.Pl1Score();
       ResetBall();
       if(Xvel<0){
         ReverseXvel();
       }
     }
-    if(Xcord == 0){//Pl2 score serv to Pl1
-      Pl2Score++;
+    if(Xcord == Thetable.Pl1NetCord()){//Pl2 score serv to Pl1
+      Thetable.Pl2Score();
       ResetBall();
       if(Xvel>0){
         ReverseXvel();

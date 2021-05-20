@@ -2,13 +2,14 @@
 ball Myball;
 paddle Pl1;
 paddle Pl2;
+table Thetable;
 int Width = 600;
 int Height = 300;
-
 
 void setup (){
   size(600,300);
   background(0);
+  Thetable = new table();
   Myball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
@@ -21,7 +22,7 @@ void setup (){
   Myball.SetYVel(2);//testing
 }
 void draw (){
-  DrawTable();               
+  Thetable.Drawtable();              
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
   Myball.Drawball();
