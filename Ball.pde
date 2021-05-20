@@ -6,10 +6,22 @@ public class ball{
  // private boolean collision = false;
   
   public void Drawball(){
-    if((Xcord+Width/30) >= Pl2.ReturnXcord() && (Ycord+Height/15) >= Pl2.ReturnYcord() && Ycord <= (Pl2.ReturnYcord() + (Height/5))){
+    if((Xcord+Width/30) == Width){//Pl1 score serv to Pl2
+      ResetBall();
+      if(Xvel<0){
+        ReverseXvel();
+      }
+    }
+    if(Xcord == 0){//Pl2 score serv to Pl1
+      ResetBall();
+      if(Xvel>0){
+        ReverseXvel();
+      }
+    }
+    if((Xcord+Width/30) >= Pl2.ReturnXcord() && (Ycord+Height/15) >= Pl2.ReturnYcord() && Ycord <= (Pl2.ReturnYcord() + (Height/5))){//Check collision with Pl2 paddle
       ReverseXvel();
     }
-    if((Xcord-Width/30) <= Pl1.ReturnXcord() && (Ycord+Height/15) >= Pl1.ReturnYcord() && Ycord <= (Pl1.ReturnYcord() + (Height/5))){
+    if((Xcord-Width/30) <= Pl1.ReturnXcord() && (Ycord+Height/15) >= Pl1.ReturnYcord() && Ycord <= (Pl1.ReturnYcord() + (Height/5))){//check collision with Pl1 paddle
       ReverseXvel();
     }
 
