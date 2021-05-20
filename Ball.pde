@@ -7,12 +7,14 @@ public class ball{
   
   public void Drawball(){
     if((Xcord+Width/30) == Width){//Pl1 score serv to Pl2
+      Pl1Score++;
       ResetBall();
       if(Xvel<0){
         ReverseXvel();
       }
     }
     if(Xcord == 0){//Pl2 score serv to Pl1
+      Pl2Score++;
       ResetBall();
       if(Xvel>0){
         ReverseXvel();

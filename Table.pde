@@ -1,4 +1,9 @@
+int Pl1Score = 0;
+int Pl2Score = 0;
+
 void DrawTable(){
+String Pl1Scr = str(Pl1Score);
+String Pl2Scr = str(Pl2Score);
   background(0);
   for(int Y=Height/12; Y<=Height-Height/12; Y+=(Height/8)){//Draw center dotted line
   fill(150);
@@ -8,5 +13,10 @@ void DrawTable(){
   rect((Width/2)-((Width/4)/2), Height/6, Width/4, Height/60);//bottom
   rect((Width/2)-((Width/4)/2), 0, Width/120, Height/6);//left
   rect((Width/2)+(((Width/4)/2)-(Width/120)), 0, Width/120, Height/6);//right
-  rect((Width/2)-((Width/120)/2), 0, Width/120, Height/6);
+  rect((Width/2)-((Width/120)/2), 0, Width/120, Height/6);//middle
+  //draw score
+  textAlign(CENTER, CENTER);
+  textSize(40);
+  text(Pl1Scr, (Width/2)-((Width/4)/2), 0, (Width/8), (Height/6));//player 1 score
+  text(Pl2Scr, (Width/2)-((Width/120)/2), 0, (Width/8), (Height/6));//player 2 score
 }
