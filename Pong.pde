@@ -1,3 +1,4 @@
+//Basic pong works
 ball Myball;
 paddle Pl1;
 paddle Pl2;
