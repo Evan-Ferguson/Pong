@@ -7,6 +7,8 @@ int Width = 600;
 int Height = 300;
 
 void setup (){
+  //println(displayWidth);//1288
+  //println(displayHeight);//720
   size(600,300);
   background(0);
   Thetable = new table();

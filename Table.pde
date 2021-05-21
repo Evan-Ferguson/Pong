@@ -19,7 +19,17 @@ private int Pl2Score = 0;
   rect((Width/2)-((Width/4)/2), 0, Width/120, Height/6);//left
   rect((Width/2)+(((Width/4)/2)-(Width/120)), 0, Width/120, Height/6);//right
   rect((Width/2)-((Width/120)/2), 0, Width/120, Height/6);//middle
+  //draw nets
+  for(int Y=Height/12; Y<=Height; Y+=(Height/6)){//Pl1 Net
+  fill(255, 0, 0);
+  rect(Width-(Width/120), Height-Y, Width/120, Height/12);
+  }
+  for(int Y=Height/12; Y<=Height; Y+=(Height/6)){//Pl2 Net
+  fill(255, 0, 0);
+  rect(0, Height-Y, Width/120, Height/12);
+  }
   //draw score
+  fill(140);
   textAlign(CENTER, CENTER);
   textSize(40);
   text(Pl1Scr, (Width/2)-((Width/4)/2), 0, (Width/8), (Height/6));//player 1 score
@@ -40,5 +50,22 @@ private int Pl2Score = 0;
   
   public void Pl2Score(){
     Pl2Score ++;
+  }
+  
+  public void Explosion(int X, int Y){//x,y cord of explosion(Use x,y of ball/call in ballDraw)
+    
+  }
+  
+  
+  public void GeometryCheck(){
+    if (Width>Height && !(Width<Height) && !(Width==Height)){
+  println("Your ready to play!");
+  text("Your ready to play!", 0, 0, 50,50);//text x,y,width,height
+  return;
+}
+else {
+  println("Please make the width greater than the Height");
+  exit();
+}
   }
 }
