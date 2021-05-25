@@ -3,6 +3,7 @@ ball Myball;
 paddle Pl1;
 paddle Pl2;
 table Thetable;
+Explosion[] ScrExplosion;
 
 int Width = 600;
 int Height = 300;
@@ -16,6 +17,10 @@ void setup (){
   Myball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
+  ScrExplosion = new Explosion[25];
+  for (int i = 0; i < 25; ++i) {
+    ScrExplosion[i] = new Explosion();
+}
   Pl1.SetXcord((Width+(Width/30))-Width);
   Pl2.SetXcord((Width-(Width/30)*2));
   Pl1.SetYcord((Height/2)-((Height/5)/2));
@@ -25,7 +30,7 @@ void setup (){
   Myball.SetYVel(2);//testing
 }
 void draw (){
-  Thetable.Drawtable();              
+  Thetable.Drawtable(); 
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
   Myball.Drawball();

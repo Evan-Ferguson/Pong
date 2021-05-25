@@ -6,6 +6,11 @@ private int Pl2Score = 0;
   String Pl1Scr = str(Pl1Score);
   String Pl2Scr = str(Pl2Score);
   background(0);
+  
+    for (int i = 0; i < 25; ++i) {//Esplosion draws all 25 particles
+    ScrExplosion[i].Draw();
+    }
+    
   for(int Y=Height/12; Y<=Height-Height/12; Y+=(Height/8)){//Draw center dotted line
   fill(150);
   rect((Width/2)-((Width/60)/2), Height-Y, Width/60, Height/12);

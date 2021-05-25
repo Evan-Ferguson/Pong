@@ -8,6 +8,9 @@ public class ball{
   public void Drawball(){
     if((Xcord+Width/30) == Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
       Thetable.Pl1Score();
+    for (int i = 0; i < 25; ++i) {//Esplosion setup
+    ScrExplosion[i].Setup(Xcord, Ycord, Xvel);
+    }
       ResetBall();
       if(Xvel<0){
         ReverseXvel();
@@ -15,6 +18,9 @@ public class ball{
     }
     if(Xcord == Thetable.Pl1NetCord()){//Pl2 score serv to Pl1
       Thetable.Pl2Score();
+    for (int i = 0; i < 25; ++i) {//Esplosion setup
+    ScrExplosion[i].Setup(Xcord, Ycord, Xvel);
+    }
       ResetBall();
       if(Xvel>0){
         ReverseXvel();
