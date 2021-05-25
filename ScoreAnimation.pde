@@ -1,4 +1,6 @@
 
+
+//Might base Vel valuse on Width and Height variables later for consistancie on dif screen sizes
 public class Explosion{
   
   private int XCord = -100;//keeps particles off screen may fix later by putting if statement in draw()
