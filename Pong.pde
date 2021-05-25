@@ -7,6 +7,7 @@ Explosion[] ScrExplosion;
 
 int Width = 600;
 int Height = 300;
+int NumScrParticles = 25;
 
 void setup (){
   //println(displayWidth);//1288
@@ -17,8 +18,8 @@ void setup (){
   Myball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
-  ScrExplosion = new Explosion[25];
-  for (int i = 0; i < 25; ++i) {
+  ScrExplosion = new Explosion[100];
+  for (int i = 0; i < NumScrParticles; ++i) {
     ScrExplosion[i] = new Explosion();
 }
   Pl1.SetXcord((Width+(Width/30))-Width);
@@ -26,7 +27,7 @@ void setup (){
   Pl1.SetYcord((Height/2)-((Height/5)/2));
   Pl2.SetYcord((Height/2)-((Height/5)/2));
   Myball.ResetBall();
-  Myball.SetXVel(2);//testing
+  Myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
   Myball.SetYVel(2);//testing
 }
 void draw (){
