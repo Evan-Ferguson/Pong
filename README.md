@@ -3,17 +3,17 @@ It's pong.
 
 Paddle/ball Y-V same???
 
-Ball behavoir:
+Ball behavoir:DONE:Variabel Vel for ball still undecided
 	Constant X-V ??
 	Hit wall: reverse Y-V
 	Pass net x: go to center serve to player that got scored on. Run player scored on scoreboard
 	Hit paddle: reverse X-V. If paddle moving up/down increase/decrease Y-V?
 
-Score board:
+Score board:DONE
 	Increment and display score if player scored is run.
-	Need two player objects.
+	Need two player objects.//Just used Pl1/Pl2 int Scr variables
 
-Paddle:
+Paddle:DONE
 	Goes up-goes down.
 	Need two paddle objects.
 
