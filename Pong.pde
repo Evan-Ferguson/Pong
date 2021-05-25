@@ -3,6 +3,7 @@ ball Myball;
 paddle Pl1;
 paddle Pl2;
 table Thetable;
+
 int Width = 600;
 int Height = 300;
 
@@ -28,6 +29,7 @@ void draw (){
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
   Myball.Drawball();
+
 }
 
 
