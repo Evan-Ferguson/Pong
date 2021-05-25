@@ -25,7 +25,7 @@ public class Explosion{
     if(Fade <= 0){
     Fade = 0;
     }else{
-      Fade -= 4;
+      Fade -= 6;
     }
     fill(Fade);
     rect(XCord, YCord, Width/90, Height/45);
