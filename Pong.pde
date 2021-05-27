@@ -4,10 +4,12 @@ paddle Pl1;
 paddle Pl2;
 table Thetable;
 Explosion[] ScrExplosion;
+Explosion[] BounceExplosion;
 
 int Width = 600;
 int Height = 300;
 int NumScrParticles = 25;
+int NumBounceParticles = 10;
 
 void setup (){
   //println(displayWidth);//1288
@@ -18,9 +20,13 @@ void setup (){
   Myball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
-  ScrExplosion = new Explosion[100];
+  ScrExplosion = new Explosion[NumScrParticles];
+  BounceExplosion = new Explosion[NumBounceParticles];
   for (int i = 0; i < NumScrParticles; ++i) {
     ScrExplosion[i] = new Explosion();
+}
+  for (int i = 0; i < NumBounceParticles; ++i) {
+    BounceExplosion[i] = new Explosion();
 }
   Pl1.SetXcord((Width+(Width/30))-Width);
   Pl2.SetXcord((Width-(Width/30)*2));

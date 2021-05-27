@@ -8,7 +8,10 @@ private int Pl2Score = 0;
   background(0);
   
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion draws all 25 particles
-    ScrExplosion[i].Draw();
+    ScrExplosion[i].ScrDraw();
+    }
+    for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion draw
+    BounceExplosion[i].BounceDraw();
     }
     
   for(int Y=Height/12; Y<=Height-Height/12; Y+=(Height/8)){//Draw center dotted line

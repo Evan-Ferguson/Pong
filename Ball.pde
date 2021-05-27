@@ -9,7 +9,7 @@ public class ball{
     if((Xcord+Width/30) == Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
       Thetable.Pl1Score();
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion setup
-    ScrExplosion[i].Setup(Xcord, Ycord, Xvel);
+    ScrExplosion[i].ScrSetup(Xcord, Ycord, Xvel);
     }
       ResetBall();
       if(Xvel<0){
@@ -19,7 +19,7 @@ public class ball{
     if(Xcord == Thetable.Pl1NetCord()){//Pl2 score serv to Pl1
       Thetable.Pl2Score();
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion setup
-    ScrExplosion[i].Setup(Xcord, Ycord, Xvel);
+    ScrExplosion[i].ScrSetup(Xcord, Ycord, Xvel);
     }
       ResetBall();
       if(Xvel>0){
@@ -27,17 +27,29 @@ public class ball{
       }
     }
     if((Xcord+Width/30) >= Pl2.ReturnXcord() && (Ycord+Height/15) >= Pl2.ReturnYcord() && Ycord <= (Pl2.ReturnYcord() + (Height/5))){//Check collision with Pl2 paddle
+    for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
+    BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
+    }
       ReverseXvel();
     }
     if((Xcord-Width/30) <= Pl1.ReturnXcord() && (Ycord+Height/15) >= Pl1.ReturnYcord() && Ycord <= (Pl1.ReturnYcord() + (Height/5))){//check collision with Pl1 paddle
+    for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
+    BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
+    } 
       ReverseXvel();
     }
 
     if(Ycord<=0){//Checks top/bottom collision
+    for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
+    BounceExplosion[i].WallBounceSetup(Xcord, Ycord, Xvel);
+    } 
       Ycord = 0;
       ReverseYvel();
     }
     if(Ycord>=(Height-(Height/15))){
+    for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
+    BounceExplosion[i].WallBounceSetup(Xcord, Ycord, Xvel);
+    } 
       Ycord = (Height-(Height/15));
       ReverseYvel();
     }
