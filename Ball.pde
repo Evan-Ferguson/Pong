@@ -32,13 +32,13 @@ public class ball{
     }
       Pl1ThrowCounter = 0;//resets oposing player counter
       Pl2ThrowCounter ++;//adds to current player counter
-      if(Pl2ThrowCounter == 10){
+      if(Pl2ThrowCounter == 2){
         if(Xvel > 0){
           Xvel = (Xvel + 2);
         }else if(Xvel < 0){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl2ThrowCounter < 10){
+      }else if(Pl2ThrowCounter < 2){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
@@ -54,13 +54,13 @@ public class ball{
     } 
       Pl2ThrowCounter = 0;
       Pl1ThrowCounter ++;
-      if(Pl1ThrowCounter == 10){
+      if(Pl1ThrowCounter == 2){
         if(Xvel > 0){
           Xvel = (Xvel + 2);
         }else if(Xvel < 0){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl1ThrowCounter < 10){
+      }else if(Pl1ThrowCounter < 2){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
