@@ -7,7 +7,7 @@ private int Pl2Score = 0;
   String Pl2Scr = str(Pl2Score);
   background(0);
   
-    for (int i = 0; i < NumScrParticles; ++i) {//Esplosion draws all 25 particles
+    for (int i = 0; i < NumScrParticles; ++i) {//Esplosion draws all particles
     ScrExplosion[i].ScrDraw();
     }
     for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion draw

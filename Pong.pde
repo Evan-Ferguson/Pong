@@ -10,6 +10,8 @@ int Width = 600;
 int Height = 300;
 int NumScrParticles = 25;
 int NumBounceParticles = 10;
+int Pl1ThrowCounter;//used to count num of bounce in a time interval to allow tracking of a "catch"
+int Pl2ThrowCounter;
 
 void setup (){
   //println(displayWidth);//1288
@@ -41,7 +43,6 @@ void draw (){
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
   Myball.Drawball();
-
 }
 
 
