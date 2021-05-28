@@ -17,6 +17,10 @@ Boolean Pause = false;
 Boolean Pl2Mode = true;
 Boolean Pl1Mode = false;
 Boolean mouseClick = false;
+Boolean AiHard = false;
+Boolean AiEasy = true;
+
+String AiLevel = "Easy";
 
 void setup (){
   //println(displayWidth);//1288

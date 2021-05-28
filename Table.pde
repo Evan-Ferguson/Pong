@@ -121,8 +121,40 @@ private String MODE;
     }
     mouseClick = false;
    }
+   if(Pl1Mode == true){//Ai level button
+    textAlign(CENTER, CENTER);
+    textSize(30);
+    fill(140);
+    rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+    fill(0);
+    text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+     if(mouseClick == true){
+       println("H");
+       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/2) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+(Height/4))){//ai level button//DOUSNT WORK
+       println("h");
+         if(AiEasy == true && AiHard == false){
+           AiEasy = false;
+           AiHard = true;
+           AiLevel = "Hard";
+         }else if(AiEasy == false && AiHard == true){
+           AiEasy = true;
+           AiHard = false;
+           AiLevel = "Easy";
+         }
+       }
+       mouseClick = false;
+     }
+   }else{
+    textAlign(CENTER, CENTER);
+    textSize(30);
+    fill(140);
+    rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+    fill(0);
+    text("Null",((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+   }
+   
     }
-    }
+  }
 }
   
   
