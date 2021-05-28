@@ -1,5 +1,5 @@
 //Basic pong works
-ball Myball;
+ball mouseYball;
 paddle Pl1;
 paddle Pl2;
 table Thetable;
@@ -14,6 +14,9 @@ int Pl1ThrowCounter;//used to count num of bounce in a time interval to allow tr
 int Pl2ThrowCounter;
 
 Boolean Pause = false;
+Boolean Pl2Mode = true;
+Boolean Pl1Mode = false;
+Boolean mouseClick = false;
 
 void setup (){
   //println(displayWidth);//1288
@@ -21,7 +24,7 @@ void setup (){
   size(600,300);
   background(0);
   Thetable = new table();
-  Myball = new ball();
+  mouseYball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
   ScrExplosion = new Explosion[NumScrParticles];
@@ -36,16 +39,16 @@ void setup (){
   Pl2.SetXcord((Width-(Width/30)*2));
   Pl1.SetYcord((Height/2)-((Height/5)/2));
   Pl2.SetYcord((Height/2)-((Height/5)/2));
-  Myball.ResetBall();
-  Myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
-  Myball.SetYVel(2);//testing
+  mouseYball.ResetBall();
+  mouseYball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
+  mouseYball.SetYVel(2);//testing
 }
 void draw (){ 
   if(Pause != true){
   Thetable.Drawtable();
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
-  Myball.Drawball();
+  mouseYball.Drawball();
   }else{
     Thetable.Buttons();
   }
@@ -60,12 +63,14 @@ void keyPressed(){
     Pl1.up = false;
     Pl1.down = true;
   }
+  if(Pl2Mode == true){
   if(keyCode == UP){
   Pl2.up = true;
   Pl2.down = false;
   }else if(keyCode == DOWN){
   Pl2.up = false;
   Pl2.down = true;
+  }
   }
 }
 void keyReleased(){
@@ -76,6 +81,7 @@ void keyReleased(){
     Pl1.up = false;
     Pl1.down = false;
   }
+  if(Pl2Mode == true){
   if(keyCode == UP){
   Pl2.up = false;
   Pl2.down = false;
@@ -83,9 +89,9 @@ void keyReleased(){
   Pl2.up = false;
   Pl2.down = false;
   }
+  }
 }
 
 void mouseClicked(){
-  Thetable.Mx = mouseX;
-  Thetable.My = mouseY;
+mouseClick = true;
 }

@@ -1,8 +1,7 @@
 public class table{
 private int Pl1Score = 0;
 private int Pl2Score = 0;
-public int Mx;
-public int My;
+private String MODE;
 
   public void Drawtable(){
   String Pl1Scr = str(Pl1Score);
@@ -61,6 +60,12 @@ public int My;
   }
   
   public void Buttons(){
+  if(Pl1Mode == true && Pl2Mode == false){
+    MODE = "Single Plr";
+  }else if(Pl1Mode == false && Pl2Mode == true){
+    MODE = "Two Plr";
+  }
+ 
     if(Pause != true){
     //drawing the buttons
     textAlign(CENTER, CENTER);
@@ -74,32 +79,48 @@ public int My;
     fill(0);
     text("QUIT", (Width/2)+(Width/8), 0, Width/24, Height/24);
   
+  if(mouseClick == true){
     //Check if clicked//button function
-    if(Mx>(Width/2)-(Width/6) && Mx<((Width/2)-(Width/6)+Width/24) && My>0 && My<Height/24){//option button
+    if(mouseX>(Width/2)-(Width/6) && mouseX<((Width/2)-(Width/6)+Width/24) && mouseY>0 && mouseY<Height/24){//option button
       Pause = true;
     }
-    if(Mx>(Width/2)+(Width/8) && Mx<((Width/2)+(Width/8)+Width/24) && My>0 && My<Height/24){//Quit button
+    if(mouseX>(Width/2)+(Width/8) && mouseX<((Width/2)+(Width/8)+Width/24) && mouseY>0 && mouseY<Height/24){//Quit button
       exit();
     }
+    mouseClick = false;
+  }
     }else{
       //draw menu buttons
     textAlign(CENTER, CENTER);
     textSize(30);
     fill(140);
-    rect(((Width/2)-Width/8), Height/4, Width/4, Height/8);
+    rect(((Width/2)-Width/8), Height/4, Width/4, Height/8);//Resume button
     fill(0);
     text("Resume",((Width/2)-Width/8), Height/4, Width/4, Height/8);
     
     textAlign(LEFT, CENTER);
     textSize(20);
     fill(140);
-    rect(((Width/2)-Width/8), Height/2, Width/4, Height/8);
+    rect(((Width/2)-Width/8), Height/2, Width/4, Height/8);//Mode button
     fill(0);
-    text("Mode:",((Width/2)-Width/8), Height/2, Width/4, Height/8);
+    text("Mode:" + MODE,((Width/2)-Width/8), Height/2, Width/4, Height/8);
     
+    if(mouseClick == true){
     //button functions
-    if(Mx>(Width/2)-(Width/8) && Mx<((Width/2)-(Width/8)+Width/4) && My>Height/4 && My<((Height/4)+Height/8)){//option button
+    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/4 && mouseY<((Height/4)+Height/8)){//Resume button
       Pause = false;
+    }
+    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/2) && mouseY>Height/2 && mouseY<((Height/2)+Height/8)){//Mode button
+      if(Pl1Mode == true && Pl2Mode == false){
+        Pl1Mode = false;
+        Pl2Mode = true;
+      }else if(Pl1Mode == false && Pl2Mode == true){
+        Pl1Mode = true;
+        Pl2Mode = false;
+      }
+    }
+    mouseClick = false;
+   }
     }
     }
 }
@@ -116,4 +137,3 @@ else {
   exit();
 }
   }
-}
