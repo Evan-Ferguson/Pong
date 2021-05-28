@@ -31,20 +31,20 @@ public class ball{
     BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
     }
       Pl1ThrowCounter = 0;//resets oposing player counter
-      Pl2ThrowCounter ++;//adds to current player counter
-      if(Pl2ThrowCounter == 2){
-        if(Xvel > 0){
+      if(Pl2ThrowCounter > 10){
+        if(Xvel > 0 && Xvel <= 2){
           Xvel = (Xvel + 2);
-        }else if(Xvel < 0){
+        }else if(Xvel < 0 && Xvel >= -2){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl2ThrowCounter < 2){
+      }else if(Pl2ThrowCounter < 10){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
         Xvel = -2;
         }
       }
+      Pl2ThrowCounter ++;//adds to current player counter
       ReverseXvel();
     }
     
@@ -53,14 +53,13 @@ public class ball{
     BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
     } 
       Pl2ThrowCounter = 0;
-      Pl1ThrowCounter ++;
-      if(Pl1ThrowCounter == 2){
-        if(Xvel > 0){
+      if(Pl1ThrowCounter > 10){
+        if(Xvel > 0 && Xvel <= 2){
           Xvel = (Xvel + 2);
-        }else if(Xvel < 0){
+        }else if(Xvel < 0 && Xvel >= -2){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl1ThrowCounter < 2){
+      }else if(Pl1ThrowCounter < 10){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
@@ -68,6 +67,7 @@ public class ball{
         }
       }
       ReverseXvel();
+      Pl1ThrowCounter ++;
     }
 
     if(Ycord<=0){//Checks top/bottom collision

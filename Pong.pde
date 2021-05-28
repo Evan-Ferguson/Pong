@@ -13,6 +13,8 @@ int NumBounceParticles = 10;
 int Pl1ThrowCounter;//used to count num of bounce in a time interval to allow tracking of a "catch"
 int Pl2ThrowCounter;
 
+Boolean Pause = false;
+
 void setup (){
   //println(displayWidth);//1288
   //println(displayHeight);//720
@@ -38,11 +40,15 @@ void setup (){
   Myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
   Myball.SetYVel(2);//testing
 }
-void draw (){
-  Thetable.Drawtable(); 
+void draw (){ 
+  if(Pause != true){
+  Thetable.Drawtable();
   Pl1.Drawpaddle();
   Pl2.Drawpaddle();
   Myball.Drawball();
+  }else{
+    Thetable.Buttons();
+  }
 }
 
 
@@ -77,4 +83,9 @@ void keyReleased(){
   Pl2.up = false;
   Pl2.down = false;
   }
+}
+
+void mouseClicked(){
+  Thetable.Mx = mouseX;
+  Thetable.My = mouseY;
 }
