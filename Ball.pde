@@ -30,7 +30,7 @@ public class ball{
     for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
     BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
     }
-    if((Xcord+Width/30) < (Pl2.ReturnXcord()+Width/60)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
+    if((Xcord+Width/30) > (Pl2.ReturnXcord()+Width/90)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
       Pl1ThrowCounter = 0;//resets oposing player counter
       if(Pl2ThrowCounter > 10){
         if(Xvel > 0 && Xvel <= 2){
@@ -49,6 +49,7 @@ public class ball{
       ReverseXvel();
     }else{
       if(Xvel > 0){
+        Xvel = 2;
         ReverseXvel();
       }
     }
@@ -58,7 +59,7 @@ public class ball{
     for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
     BounceExplosion[i].PaddleBounceSetup(Xcord, Ycord, Xvel);
     } 
-    if((Xcord-Width/30) < (Pl2.ReturnXcord()-Width/60)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
+    if((Xcord-Width/30) < (Pl2.ReturnXcord()-Width/90)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
       Pl2ThrowCounter = 0;
       if(Pl1ThrowCounter > 10){
         if(Xvel > 0 && Xvel <= 2){
@@ -77,6 +78,7 @@ public class ball{
       Pl1ThrowCounter ++;
     }else{
         if(Xvel < 0){
+        Xvel = -2;
         ReverseXvel();
       }
     }
