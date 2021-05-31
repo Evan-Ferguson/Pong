@@ -110,7 +110,7 @@ private String MODE;
     if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/4 && mouseY<((Height/4)+Height/8)){//Resume button
       Pause = false;
     }
-    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/2) && mouseY>Height/2 && mouseY<((Height/2)+Height/8)){//Mode button
+    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/2 && mouseY<((Height/2)+Height/8)){//Mode button
       if(Pl1Mode == true && Pl2Mode == false){
         Pl1Mode = false;
         Pl2Mode = true;
@@ -122,16 +122,8 @@ private String MODE;
     mouseClick = false;
    }
    if(Pl1Mode == true){//Ai level button
-    textAlign(CENTER, CENTER);
-    textSize(30);
-    fill(140);
-    rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
-    fill(0);
-    text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
-     if(mouseClick == true){
-       println("H");
-       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/2) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+(Height/4))){//ai level button//DOUSNT WORK
-       println("h");
+   if(mouseClick == true){
+       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button//Mouse click == true not working
          if(AiEasy == true && AiHard == false){
            AiEasy = false;
            AiHard = true;
@@ -142,8 +134,14 @@ private String MODE;
            AiLevel = "Easy";
          }
        }
-       mouseClick = false;
-     }
+           mouseClick = false;
+   }
+          textAlign(CENTER, CENTER);
+          textSize(30);
+          fill(140);
+          rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+          fill(0);
+          text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
    }else{
     textAlign(CENTER, CENTER);
     textSize(30);
@@ -152,7 +150,6 @@ private String MODE;
     fill(0);
     text("Null",((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
    }
-   
     }
   }
 }
