@@ -114,5 +114,8 @@ public class ball{
   public void SetYVel(int Y){
     Yvel = Y;
   }
+  public int ReturnYcord(){
+    return(Ycord);
+  }
   
 }

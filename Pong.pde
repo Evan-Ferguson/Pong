@@ -1,5 +1,5 @@
 //Basic pong works
-ball mouseYball;
+ball myball;
 paddle Pl1;
 paddle Pl2;
 table Thetable;
@@ -28,7 +28,7 @@ void setup (){
   size(600,300);
   background(0);
   Thetable = new table();
-  mouseYball = new ball();
+  myball = new ball();
   Pl1 = new paddle();
   Pl2 = new paddle();
   ScrExplosion = new Explosion[NumScrParticles];
@@ -43,9 +43,9 @@ void setup (){
   Pl2.SetXcord((Width-(Width/30)*2));
   Pl1.SetYcord((Height/2)-((Height/5)/2));
   Pl2.SetYcord((Height/2)-((Height/5)/2));
-  mouseYball.ResetBall();
-  mouseYball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
-  mouseYball.SetYVel(2);//testing
+  myball.ResetBall();
+  myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
+  myball.SetYVel(2);//testing
 }
 void draw (){ 
   if(Pause != true){
@@ -53,7 +53,7 @@ void draw (){
   Pl1.Drawpaddle();
   Pl2Ai();
   Pl2.Drawpaddle();
-  mouseYball.Drawball();
+  myball.Drawball();
   }else{
     Thetable.Buttons();
   }
