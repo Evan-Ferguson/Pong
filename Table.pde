@@ -123,7 +123,7 @@ private String MODE;
    }
    if(Pl1Mode == true){//Ai level button
    if(mouseClick == true){
-       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button//Mouse click == true not working
+       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button//mouse click not working
          if(AiEasy == true && AiHard == false){
            AiEasy = false;
            AiHard = true;
