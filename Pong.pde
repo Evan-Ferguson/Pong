@@ -51,6 +51,7 @@ void draw (){
   if(Pause != true){
   Thetable.Drawtable();
   Pl1.Drawpaddle();
+  Pl2Ai();
   Pl2.Drawpaddle();
   mouseYball.Drawball();
   }else{

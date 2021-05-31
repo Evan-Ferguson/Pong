@@ -105,7 +105,22 @@ private String MODE;
     fill(0);
     text("Mode:" + MODE,((Width/2)-Width/8), Height/2, Width/4, Height/8);
     
-    
+    if(mouseClick == true){
+    //button functions
+    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/4 && mouseY<((Height/4)+Height/8)){//Resume button
+      Pause = false;
+    }
+    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/2 && mouseY<((Height/2)+Height/8)){//Mode button
+      if(Pl1Mode == true && Pl2Mode == false){
+        Pl1Mode = false;
+        Pl2Mode = true;
+      }else if(Pl1Mode == false && Pl2Mode == true){
+        Pl1Mode = true;
+        Pl2Mode = false;
+      }
+    }
+    mouseClick = false;
+   }
        if(Pl1Mode == true){
    if(mouseClick == true){
        if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button
@@ -128,22 +143,6 @@ private String MODE;
           fill(0);
           text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
    }else{
-     if(mouseClick == true){
-    //button functions
-    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/4 && mouseY<((Height/4)+Height/8)){//Resume button
-      Pause = false;
-    }
-    if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/2 && mouseY<((Height/2)+Height/8)){//Mode button
-      if(Pl1Mode == true && Pl2Mode == false){
-        Pl1Mode = false;
-        Pl2Mode = true;
-      }else if(Pl1Mode == false && Pl2Mode == true){
-        Pl1Mode = true;
-        Pl2Mode = false;
-      }
-    }
-    mouseClick = false;
-   }
    
     textAlign(CENTER, CENTER);
     textSize(30);
