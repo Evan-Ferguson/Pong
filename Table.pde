@@ -105,7 +105,30 @@ private String MODE;
     fill(0);
     text("Mode:" + MODE,((Width/2)-Width/8), Height/2, Width/4, Height/8);
     
-    if(mouseClick == true){
+    
+       if(Pl1Mode == true){
+   if(mouseClick == true){
+       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button
+         if(AiEasy == true && AiHard == false){
+           AiEasy = false;
+           AiHard = true;
+           AiLevel = "Hard";
+         }else if(AiEasy == false && AiHard == true){
+           AiEasy = true;
+           AiHard = false;
+           AiLevel = "Easy";
+         }
+       }
+         mouseClick = false;
+ }
+          textAlign(CENTER, CENTER);
+          textSize(30);
+          fill(140);
+          rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+          fill(0);
+          text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
+   }else{
+     if(mouseClick == true){
     //button functions
     if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>Height/4 && mouseY<((Height/4)+Height/8)){//Resume button
       Pause = false;
@@ -121,28 +144,7 @@ private String MODE;
     }
     mouseClick = false;
    }
-   if(Pl1Mode == true){//Ai level button
-   if(mouseClick == true){
-       if(mouseX>(Width/2)-(Width/8) && mouseX<((Width/2)-(Width/8)+Width/4) && mouseY>((Height/2)+Height/8) && mouseY<((Height/2)+Height/4) ){//ai level button//mouse click not working
-         if(AiEasy == true && AiHard == false){
-           AiEasy = false;
-           AiHard = true;
-           AiLevel = "Hard";
-         }else if(AiEasy == false && AiHard == true){
-           AiEasy = true;
-           AiHard = false;
-           AiLevel = "Easy";
-         }
-       }
-           mouseClick = false;
-   }
-          textAlign(CENTER, CENTER);
-          textSize(30);
-          fill(140);
-          rect(((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
-          fill(0);
-          text(AiLevel,((Width/2)-Width/8), ((Height/2)+Height/8), Width/4, Height/8);
-   }else{
+   
     textAlign(CENTER, CENTER);
     textSize(30);
     fill(140);
