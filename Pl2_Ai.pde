@@ -22,6 +22,8 @@ void Pl2Ai(){
     }
   }
   }
+  
+  
   if(AiHard == true){
     if(Pl2.ReturnYcord()+(Height/10) < myball.ReturnYcord()){
         Pl2.up = false;
