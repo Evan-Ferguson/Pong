@@ -24,7 +24,7 @@ void Pl2Ai(){
   }
   
   
-  if(AiHard == true){
+  if(AiHard == true){//wont work with multiple balls
     if(Pl2.ReturnYcord()+(Height/10) < myball.ReturnYcord()){
         Pl2.up = false;
         Pl2.down = true;
