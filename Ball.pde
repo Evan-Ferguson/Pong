@@ -6,6 +6,7 @@ public class ball{
  // private boolean collision = false;
   
   public void Drawball(){
+      println(Xvel);
     if((Xcord+Width/30) >= Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
       Thetable.Pl1Score();
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion setup
@@ -32,13 +33,13 @@ public class ball{
     }
     if((Xcord+Width/30) > (Pl2.ReturnXcord()+Width/90)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
       Pl1ThrowCounter = 0;//resets oposing player counter
-      if(Pl2ThrowCounter > 10){
+      if(Pl2ThrowCounter > 20){
         if(Xvel > 0 && Xvel <= 2){
           Xvel = (Xvel + 2);
         }else if(Xvel < 0 && Xvel >= -2){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl2ThrowCounter < 10){
+      }else if(Pl2ThrowCounter < 20){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
@@ -61,13 +62,13 @@ public class ball{
     } 
     if((Xcord-Width/30) < (Pl2.ReturnXcord()-Width/90)){//can only "catch" ball if ball intersects more than 1/3 into the paddle prevents sticking with increased ball vel
       Pl2ThrowCounter = 0;
-      if(Pl1ThrowCounter > 10){
+      if(Pl1ThrowCounter > 20){
         if(Xvel > 0 && Xvel <= 2){
           Xvel = (Xvel + 2);
         }else if(Xvel < 0 && Xvel >= -2){
         Xvel = (Xvel - 2);
         }
-      }else if(Pl1ThrowCounter < 10){
+      }else if(Pl1ThrowCounter < 20){
         if(Xvel > 0){
           Xvel = 2;
         }else if(Xvel < 0){
