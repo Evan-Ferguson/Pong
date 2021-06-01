@@ -6,7 +6,6 @@ public class ball{
  // private boolean collision = false;
   
   public void Drawball(){
-      println(Xvel);
     if((Xcord+Width/30) >= Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
       Thetable.Pl1Score();
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion setup
