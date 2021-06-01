@@ -48,11 +48,9 @@ public class ball{
       }
       Pl2ThrowCounter ++;//adds to current player counter
       ReverseXvel();
-    }else{
-      if(Xvel > 0){
+    }else if(Xvel > 0){
         Xvel = 2;
         ReverseXvel();
-      }
     }
     }
     
@@ -77,11 +75,9 @@ public class ball{
       }
       ReverseXvel();
       Pl1ThrowCounter ++;
-    }else{
-        if(Xvel < 0){
+    }else if(Xvel < 0){ 
         Xvel = -2;
         ReverseXvel();
-      }
     }
     }
 
