@@ -1,4 +1,4 @@
-public class table{
+final public class table{
 private int Pl1Score = 0;
 private int Pl2Score = 0;
 private String MODE;
