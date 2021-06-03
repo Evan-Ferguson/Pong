@@ -1,5 +1,5 @@
 //Might base Vel valuse on Width and Height variables later for consistency on dif screen sizes
-public class Explosion extends location{
+public class Explosion extends Objects{
   private float Xvel;//+right, -left
   private float Yvel;//+down, -up
   private int Fade;
@@ -70,5 +70,9 @@ public class Explosion extends location{
     rect(Xcord, Ycord, Width/180, Height/90);
     Xcord = (Xcord+int(Xvel));
     Ycord = (Ycord+int(Yvel));
+  }
+  
+  public void Draw(){//does nothing because explosions are called in other draw function not as a stand alone entity
+    
   }
 }

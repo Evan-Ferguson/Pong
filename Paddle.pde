@@ -1,4 +1,4 @@
-public class paddle extends location{
+public class paddle extends Objects{
   private int Yvel;//Posative Down |Negative Up
   public boolean up = false;
   public boolean down = false;
@@ -7,7 +7,7 @@ public class paddle extends location{
     super(X, Y);
   }
   
-  public void Drawpaddle(){
+  public void Draw(){
     if(up == true && down == false){
       MovepaddleUp();
     }else if(up == false && down == true){

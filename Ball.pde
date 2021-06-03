@@ -1,4 +1,4 @@
-public class ball extends location{
+public class ball extends Objects{
   private int Xvel;//Posative Right|Negative Left
   private int Yvel;//Posative Down |Negative Up
 
@@ -6,7 +6,7 @@ public class ball extends location{
     super(X, Y);
   }
   
-  public void Drawball(){
+  public void Draw(){
     if((Xcord+Width/30) >= Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
       Thetable.Pl1Score();
     for (int i = 0; i < NumScrParticles; ++i) {//Esplosion setup
