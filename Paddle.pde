@@ -1,9 +1,11 @@
-public class paddle{
-  private int Xcord;
-  private int Ycord;
+public class paddle extends location{
   private int Yvel;//Posative Down |Negative Up
   public boolean up = false;
   public boolean down = false;
+  
+  private paddle(){
+    super(X, Y);
+  }
   
   public void Drawpaddle(){
     if(up == true && down == false){

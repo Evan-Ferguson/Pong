@@ -47,6 +47,19 @@ void setup (){
   myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
   myball.SetYVel(2);//testing
 }
+
+abstract class location{
+  public int Xcord;
+  public int Ycord;
+  
+  private location(int X, int Y){
+    Xcord = X;
+    Ycord = Y;
+  }
+  
+}
+
+
 void draw (){ 
   if(Pause != true){
   Thetable.Drawtable();

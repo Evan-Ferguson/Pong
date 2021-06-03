@@ -1,8 +1,10 @@
-public class ball{
-  private int Xcord;
-  private int Ycord;
+public class ball extends location{
   private int Xvel;//Posative Right|Negative Left
   private int Yvel;//Posative Down |Negative Up
+
+  private ball(){
+    super(X, Y);
+  }
   
   public void Drawball(){
     if((Xcord+Width/30) >= Thetable.Pl2NetCord()){//Pl1 score serv to Pl2
