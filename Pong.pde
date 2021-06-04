@@ -26,8 +26,8 @@ Boolean Start = false;
 String AiLevel = "Easy";
 
 void setup (){
-  //Width = int(displayWidth);//Use if want full use of screen(not recomended as speeds are currently based on th 600/300 val/fixed)
-  //Height = int(displayWidth/2);
+  //Width = int(displayWidth);//Use if want full use of screen(not recomended as speeds are currently based on th 600/300 val/fixed vel)
+  //Height = int(displayWidth/2);//need to assign it becuase assigning it straight to the variable results in a 0.(for both)
   
   //println(displayWidth);
   //println(displayHeight);
