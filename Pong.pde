@@ -5,6 +5,7 @@ paddle Pl2;
 table Thetable;
 Explosion[] ScrExplosion;
 Explosion[] BounceExplosion;
+private ArrayList<Objects> ObjectList = new ArrayList<Objects>();
 
 int Width = 600;
 int Height = 300;
@@ -33,6 +34,10 @@ void setup (){
   Pl2 = new paddle();
   ScrExplosion = new Explosion[NumScrParticles];
   BounceExplosion = new Explosion[NumBounceParticles];
+  ObjectList.add(myball);
+  ObjectList.add(Pl1);
+  ObjectList.add(Pl2);
+  
   for (int i = 0; i < NumScrParticles; ++i) {
     ScrExplosion[i] = new Explosion();
 }
@@ -48,7 +53,7 @@ void setup (){
   myball.SetYVel(2);//testing
 }
 
-abstract class location{
+abstract class location extends Objects{
   public int Xcord;
   public int Ycord;
   
@@ -58,14 +63,19 @@ abstract class location{
   }
 }
 
+private abstract class Objects{
+  
+  public abstract void Draw();
+}
 
-void draw (){ 
+
+void draw(){ 
   if(Pause != true){
   Thetable.Drawtable();
   Pl2Ai();
-  Pl1.Draw();
-  Pl2.Draw();
-  myball.Draw();
+  for(int i=0; i<ObjectList.size(); i++){
+    ObjectList.get(i).Draw();
+  }
   }else{
     Thetable.Buttons();
   }

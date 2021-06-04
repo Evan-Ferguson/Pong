@@ -72,4 +72,7 @@ public class Explosion extends location{
     Ycord = (Ycord+int(Yvel));
   }
   
+  void Draw(){//Not used
+
+  }
 }
