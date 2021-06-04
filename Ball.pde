@@ -1,4 +1,4 @@
-public class ball extends location{
+public class ball extends Objects{
   private int Xvel;//Posative Right|Negative Left
   private int Yvel;//Posative Down |Negative Up
 

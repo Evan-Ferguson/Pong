@@ -53,17 +53,14 @@ void setup (){
   myball.SetYVel(2);//testing
 }
 
-abstract class location extends Objects{
+private abstract class Objects{
   public int Xcord;
   public int Ycord;
   
-  private location(int X, int Y){
+  private Objects(int X, int Y){
     Xcord = X;
     Ycord = Y;
   }
-}
-
-private abstract class Objects{
   
   public abstract void Draw();
 }

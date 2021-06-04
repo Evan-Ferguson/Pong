@@ -1,4 +1,4 @@
-public class paddle extends location{
+public class paddle extends Objects{
   private int Yvel;//Posative Down |Negative Up
   public boolean up = false;
   public boolean down = false;

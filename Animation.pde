@@ -1,5 +1,5 @@
 //Might base Vel valuse on Width and Height variables later for consistency on dif screen sizes
-public class Explosion extends location{
+public class Explosion extends Objects{
   private float Xvel;//+right, -left
   private float Yvel;//+down, -up
   private int Fade;
