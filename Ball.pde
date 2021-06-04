@@ -81,6 +81,7 @@ public class ball extends Objects{
     }
     }
 
+
     if(Ycord<=0){//Checks top/bottom collision
     for (int i = 0; i < NumBounceParticles; ++i) {//Bounce Esplosion setup
     BounceExplosion[i].WallBounceSetup(Xcord, Ycord, Xvel);

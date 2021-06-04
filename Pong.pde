@@ -13,6 +13,7 @@ int NumScrParticles = 25;
 int NumBounceParticles = 10;
 int Pl1ThrowCounter;//used to count num of bounce in a time interval to allow tracking of a "catch"
 int Pl2ThrowCounter;
+float val;
 
 Boolean Pause = false;
 Boolean Pl2Mode = true;
@@ -20,13 +21,15 @@ Boolean Pl1Mode = false;
 Boolean mouseClick = false;
 Boolean AiHard = false;
 Boolean AiEasy = true;
+Boolean Start = false;
 
 String AiLevel = "Easy";
 
 void setup (){
-  //println(displayWidth);//1288
-  //println(displayHeight);//720
+  //println(displayWidth);
+  //println(displayHeight);
   size(600,300);
+  //refer to geometry variables
   background(0);
   Thetable = new table();
   myball = new ball();
@@ -34,9 +37,9 @@ void setup (){
   Pl2 = new paddle();
   ScrExplosion = new Explosion[NumScrParticles];
   BounceExplosion = new Explosion[NumBounceParticles];
-  ObjectList.add(myball);
-  ObjectList.add(Pl1);
+  ObjectList.add(Pl1);//order added determines draw order
   ObjectList.add(Pl2);
+  ObjectList.add(myball);
   
   for (int i = 0; i < NumScrParticles; ++i) {
     ScrExplosion[i] = new Explosion();
@@ -49,8 +52,11 @@ void setup (){
   Pl1.SetYcord((Height/2)-((Height/5)/2));
   Pl2.SetYcord((Height/2)-((Height/5)/2));
   myball.ResetBall();
-  myball.SetXVel(2);//testing add variabele Vel based on rallies without a score etc
-  myball.SetYVel(2);//testing
+  
+  val=random(1)>0.5?-2:2;  //serves randomly to start
+  myball.SetXVel(int(val));
+  val=random(1)>0.5?-2:2;  
+  myball.SetYVel(int(val));
 }
 
 private abstract class Objects{
@@ -67,6 +73,7 @@ private abstract class Objects{
 
 
 void draw(){ 
+  if(Start == true){
   if(Pause != true){
   Thetable.Drawtable();
   Pl2Ai();
@@ -76,10 +83,18 @@ void draw(){
   }else{
     Thetable.Buttons();
   }
+  }else{
+    GeometryCheck();
+  }
+  
 }
 
 
 void keyPressed(){
+  if(keyCode == 32){//space bar pressed
+    Start = true;
+  }
+  
   if(key == 'w'){
     Pl1.up = true;
     Pl1.down = false;
