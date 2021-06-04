@@ -157,16 +157,18 @@ private String MODE;
   
   
   public void GeometryCheck(){
-    if (Width>Height && !(Width<Height) && !(Width==Height)){//preferably Height is 1/2 of Width 
+    if (Width>Height){//preferably Height is 1/2 of Width 
     textAlign(CENTER, CENTER);
     textSize(20);
     fill(255);
     text("Press space to start",(Width/4), Height/4, Width/2, Height/8);
   return;
-}
-else {
-  println("Please make the width greater than the Height");
+}else {
+  textAlign(CENTER, CENTER);
+  textSize(20);
+  fill(255);
   text("Please make the width greater than the Height",(Width/4), Height/4, Width/2, Height/2);
   Start = false;
+  return;
 }
   }

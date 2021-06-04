@@ -7,13 +7,13 @@ Explosion[] ScrExplosion;
 Explosion[] BounceExplosion;
 private ArrayList<Objects> ObjectList = new ArrayList<Objects>();
 
-int Width = 600;
-int Height = 300;
+int Width = 600;//600(test/standard val)
+int Height = 300;//300
 int NumScrParticles = 25;
 int NumBounceParticles = 10;
 int Pl1ThrowCounter;//used to count num of bounce in a time interval to allow tracking of a "catch"
 int Pl2ThrowCounter;
-float val;
+float Startval;
 
 Boolean Pause = false;
 Boolean Pl2Mode = true;
@@ -26,6 +26,9 @@ Boolean Start = false;
 String AiLevel = "Easy";
 
 void setup (){
+  //Width = int(displayWidth);//Use if want full use of screen(not recomended as speeds are currently based on th 600/300 val/fixed)
+  //Height = int(displayWidth/2);
+  
   //println(displayWidth);
   //println(displayHeight);
   size(600,300);
@@ -53,10 +56,10 @@ void setup (){
   Pl2.SetYcord((Height/2)-((Height/5)/2));
   myball.ResetBall();
   
-  val=random(1)>0.5?-2:2;  //serves randomly to start
-  myball.SetXVel(int(val));
-  val=random(1)>0.5?-2:2;  
-  myball.SetYVel(int(val));
+  Startval=random(1)>0.5?-2:2;  //serves randomly to start
+  myball.SetXVel(int(Startval));
+  Startval=random(1)>0.5?-2:2;  
+  myball.SetYVel(int(Startval));
 }
 
 private abstract class Objects{
